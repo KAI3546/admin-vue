@@ -114,6 +114,19 @@ router.beforeEach((to, from, next) => {
           'orderNum': 6,
           'open': null,
           'list': null
+        },
+        {
+          'menuId': 30,
+          'parentId': 1,
+          'parentName': null,
+          'name': '仓库商品管理',
+          'url': 'sys/warehousegoods',
+          'perms': 'sys:warehousegoods:list,sys:warehousegoods:info,sys:warehousegoods:save,sys:warehousegoods:update,sys:warehousegoods:delete',
+          'type': 1,
+          'icon': 'shouye',
+          'orderNum': 6,
+          'open': null,
+          'list': null
         }
       ]
     }
