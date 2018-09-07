@@ -3,7 +3,7 @@
     <div class="site-navbar__header">
       <h1 class="site-navbar__brand" @click="$router.push({ name: 'home' })">
         <a class="site-navbar__brand-lg" href="javascript:;">集栈供应链后台</a>
-        <a class="site-navbar__brand-mini" href="javascript:;">人人</a>
+        <a class="site-navbar__brand-mini" href="javascript:;">集栈</a>
       </h1>
     </div>
     <div class="site-navbar__body clearfix">
@@ -24,23 +24,13 @@
             </el-badge>
           </template>
         </el-menu-item>
-        <el-menu-item index="2">
-          <el-badge value="hot">
-            <a href="//www.renren.io/" target="_blank">官方社区</a>
-          </el-badge>
-        </el-menu-item>
-        <el-submenu index="3">
-          <template slot="title">Git源码</template>
-          <el-menu-item index="2-1"><a href="//github.com/daxiongYang/renren-fast-vue" target="_blank">前端</a></el-menu-item>
-          <el-menu-item index="2-2"><a href="//git.oschina.net/renrenio/renren-fast" target="_blank">后台</a></el-menu-item>
-          <el-menu-item index="2-3"><a href="//git.oschina.net/renrenio/renren-generator" target="_blank">代码生成器</a></el-menu-item>
-        </el-submenu>
         <el-menu-item class="site-navbar__avatar" index="3">
           <el-dropdown :show-timeout="0" placement="bottom">
             <span class="el-dropdown-link">
               <img src="~@/assets/img/avatar.png" :alt="userName">{{ userName }}
             </span>
             <el-dropdown-menu slot="dropdown">
+              <el-dropdown-item @click.native="logoutHandle()">退出</el-dropdown-item>
             </el-dropdown-menu>
           </el-dropdown>
         </el-menu-item>
@@ -53,7 +43,6 @@
 
 <script>
   import UpdatePassword from './main-navbar-update-password'
-  import { clearLoginInfo } from '@/utils'
   export default {
     data () {
       return {
@@ -95,14 +84,11 @@
           type: 'warning'
         }).then(() => {
           this.$http({
-            url: this.$http.adornUrl('/sys/logout'),
-            method: 'post',
-            data: this.$http.adornData()
+            url: this.$http.adornUrl('/user/logout'),
+            method: 'get',
+            params: this.$http.adornParams()
           }).then(({data}) => {
-            if (data && data.code === 0) {
-              clearLoginInfo()
-              this.$router.push({ name: 'login' })
-            }
+            // window.location.href='https://www.jizhangyl.com/jizhangyl/wechat/qrAuthorize?returnUrl=https://www.jizhangyl.com/jizhangyl/user/login'
           })
         }).catch(() => {})
       }

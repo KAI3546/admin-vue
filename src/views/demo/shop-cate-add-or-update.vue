@@ -32,6 +32,9 @@
         }
       }
     },
+    created () {
+      console.log('123123')
+    },
     methods: {
       init (data) {
         this.visible = true

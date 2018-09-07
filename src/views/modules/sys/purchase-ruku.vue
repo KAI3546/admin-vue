@@ -55,7 +55,7 @@
   export default {
     data () {
       return {
-        dataForm: [],
+        dataForm: {},
         visible: false,
         orderId: '',
         orderDetail: [],
@@ -78,7 +78,7 @@
       ActualTotalAmount () {
         let total = 0
         for (var i = 0; i < this.orderDetail.length; i++) {
-          total = total + (this.orderDetail[i].productQuantity * this.orderDetail[i].actualNum)
+          total = total + (this.orderDetail[i].productPrice * this.orderDetail[i].actualNum)
         }
         return total
       }

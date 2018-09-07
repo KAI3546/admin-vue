@@ -87,6 +87,16 @@
           <el-switch v-model="scope.row.checkStatus == 0 ? false : true" active-text="已审核" inactive-text="待审核" @change="handleSwitch(scope.row)"></el-switch>
         </template>
       </el-table-column>
+      <el-table-column
+        fixed="right"
+        header-align="center"
+        align="center"
+        width="150"
+        label="操作">
+        <template slot-scope="scope">
+          <el-button type="primary" round size="mini" @click="handleBohui(scope.row)">驳回</el-button>
+        </template>
+      </el-table-column>
     </el-table>
     <el-pagination
       @size-change="sizeChangeHandle"
@@ -178,7 +188,31 @@
           url: this.$http.adornUrl('/cert/confirm'),
           method: 'get',
           params: this.$http.adornParams({
-            'id': data.id
+            'id': data.id,
+            'status': '1'
+          })
+        }).then(({data}) => {
+          if (data.code === 0) {
+            this.$message({
+              message: '操作成功',
+              type: 'success',
+              duration: 1500,
+              onClose: () => {
+                this.getDataList()
+              }
+            })
+          } else {
+            this.$message.error(data.msg)
+          }
+        })
+      },
+      handleBohui (data) {
+        this.$http({
+          url: this.$http.adornUrl('/cert/confirm'),
+          method: 'get',
+          params: this.$http.adornParams({
+            'id': data.id,
+            'status': '2'
           })
         }).then(({data}) => {
           if (data.code === 0) {
