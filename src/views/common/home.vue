@@ -1,5 +1,6 @@
 <template>
   <div class="mod-home">
+<<<<<<< HEAD
     <h3>项目介绍</h3>
     <ul>
       <li>renren-fast-vue基于vue、element-ui构建开发，实现<a href="https://gitee.com/renrenio/renren-fast" target="_blank">renren-fast</a>后台管理前端功能，提供一套更优的前端解决方案</li>
@@ -22,6 +23,12 @@
     <ul>
       <li>高级群：324780204(大牛云集，跟大牛学习新技能)</li>
       <li>普通群：145799952(学习交流，互相解答各种疑问)</li>
+=======
+    <h3>集栈供应链后台系统</h3>
+    <ul>
+      <li>官方社区：<a href="//renren.io" target="_blank">renren.io</a></li>
+      <li>前端Git地址：<a href="//github.com/daxiongYang/renren-fast-vue" target="_blank">github.com/daxiongYang/renren-fast-vue</a></li>
+>>>>>>> 52aa519cf86f5f228359be46b880db9378353327
     </ul>
   </div>
 </template>

@@ -50,7 +50,11 @@
 </template>
 
 <script>
+<<<<<<< HEAD
   // import qs from 'qs'
+=======
+  import qs from 'qs'
+>>>>>>> 52aa519cf86f5f228359be46b880db9378353327
   export default {
     data () {
       return {
@@ -100,9 +104,15 @@
       submitUpload () {
         console.log(JSON.stringify(this.shopInfo))
         this.$http({
+<<<<<<< HEAD
           url: this.$http.adornUrl('/purchase/order/create'),
           method: 'POST',
           data: this.$http.adornData({
+=======
+          url: 'http://jizhangyl.natapp1.cc/jizhangyl/purchase/order/create',
+          method: 'POST',
+          data: qs.stringify({
+>>>>>>> 52aa519cf86f5f228359be46b880db9378353327
             'providerId': this.supplier.providerId,
             'loanDate': this.dataForm.loanDate,
             'items': JSON.stringify(this.shopInfo)
@@ -126,7 +136,11 @@
       getSupplierList () {
         console.log('getCatelist')
         this.$http({
+<<<<<<< HEAD
           url: this.$http.adornUrl('/product/provider/findAll'),
+=======
+          url: 'http://jizhangyl.natapp1.cc/jizhangyl/product/provider/findAll',
+>>>>>>> 52aa519cf86f5f228359be46b880db9378353327
           method: 'get'
         }).then(({data}) => {
           if (data && data.code === 0) {
@@ -167,12 +181,21 @@
           return
         }
         this.$http({
+<<<<<<< HEAD
           url: this.$http.adornUrl('/purchase/order/findByNameOrJan'),
           method: 'get',
           params: this.$http.adornParams({
             'param': queryString,
             'providerId': this.supplier.providerId
           })
+=======
+          url: 'http://jizhangyl.natapp1.cc/jizhangyl/purchase/order/findByNameOrJan',
+          method: 'get',
+          params: {
+            'param': queryString,
+            'providerId': this.supplier.providerId
+          }
+>>>>>>> 52aa519cf86f5f228359be46b880db9378353327
         }).then(({data}) => {
           if (data && data.code === 0) {
             this.suggestList = data.data

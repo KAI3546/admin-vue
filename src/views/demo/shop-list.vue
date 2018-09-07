@@ -127,8 +127,12 @@
       getDataList () {
         this.dataListLoading = true
         this.$http({
+<<<<<<< HEAD
           // url: 'https://www.jizhangyl.com/jizhangyl/shop/list',
           url: this.$http.adornUrl('/shop/list'),
+=======
+          url: 'http://jizhangyl.natapp1.cc/jizhangyl/shop/list',
+>>>>>>> 52aa519cf86f5f228359be46b880db9378353327
           method: 'get',
           params: this.$http.adornParams({
             'page': this.pageIndex,
@@ -180,12 +184,20 @@
           type: 'warning'
         }).then(() => {
           this.$http({
+<<<<<<< HEAD
             // url: 'https://www.jizhangyl.com/jizhangyl/shop/delete',
             url: this.$http.adornUrl('/shop/delete'),
             method: 'get',
             params: this.$http.adornParams({
               'id': userIds[0]
             })
+=======
+            url: 'http://jizhangyl.natapp1.cc/jizhangyl/shop/delete',
+            method: 'get',
+            params: {
+              'id': userIds[0]
+            }
+>>>>>>> 52aa519cf86f5f228359be46b880db9378353327
           }).then(({data}) => {
             if (data && data.code === 0) {
               this.$message({
@@ -204,6 +216,7 @@
       },
       handleSwitch (data) {
         console.log(data.shop_status)
+<<<<<<< HEAD
         let address = data.shop_status ? '/shop/up' : '/shop/down'
         console.log(address)
         this.dataListLoading = true
@@ -213,13 +226,28 @@
           params: this.$http.adornParams({
             'productId': data.id
           })
+=======
+        let address = data.shop_status ? 'http://jizhangyl.natapp1.cc/jizhangyl/shop/up' : 'http://jizhangyl.natapp1.cc/jizhangyl/shop/down'
+        console.log(address)
+        this.dataListLoading = true
+        this.$http({
+          url: address,
+          method: 'get',
+          params: {
+            'productId': data.id
+          }
+>>>>>>> 52aa519cf86f5f228359be46b880db9378353327
         }).then(({data}) => {
           this.getDataList()
           this.dataListLoading = false
         })
       },
       daochuShop () {
+<<<<<<< HEAD
         window.open('https://www.jizhangyl.com/jizhangyl/shop/export')
+=======
+        window.open('http://jizhangyl.natapp1.cc/jizhangyl/shop/export')
+>>>>>>> 52aa519cf86f5f228359be46b880db9378353327
       }
     }
   }

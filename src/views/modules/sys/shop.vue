@@ -116,7 +116,11 @@
       getDataList () {
         this.dataListLoading = true
         this.$http({
+<<<<<<< HEAD
           url: this.$http.adornUrl('/product/provider/findByProviderId'),
+=======
+          url: 'http://jizhangyl.natapp1.cc/jizhangyl/product/provider/findByProviderId',
+>>>>>>> 52aa519cf86f5f228359be46b880db9378353327
           method: 'get',
           params: this.$http.adornParams({
             'providerId': this.providerId,
@@ -165,7 +169,11 @@
           type: 'warning'
         }).then(() => {
           this.$http({
+<<<<<<< HEAD
             url: this.$http.adornUrl('/product/provider/repoDel'),
+=======
+            url: 'http://jizhangyl.natapp1.cc/jizhangyl/product/provider/repoDel',
+>>>>>>> 52aa519cf86f5f228359be46b880db9378353327
             method: 'get',
             params: this.$http.adornParams({
               'id': ids[0]

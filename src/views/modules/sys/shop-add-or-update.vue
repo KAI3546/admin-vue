@@ -51,7 +51,11 @@
 </template>
 
 <script>
+<<<<<<< HEAD
   // import qs from 'qs'
+=======
+  import qs from 'qs'
+>>>>>>> 52aa519cf86f5f228359be46b880db9378353327
   export default {
     data () {
       return {
@@ -104,7 +108,11 @@
         } else {
           this.dataForm.providerId = this.$route.query.providerId
           this.$http({
+<<<<<<< HEAD
             url: this.$http.adornUrl('/cate/list'),
+=======
+            url: 'http://jizhangyl.natapp1.cc/jizhangyl/cate/list',
+>>>>>>> 52aa519cf86f5f228359be46b880db9378353327
             method: 'get'
           }).then(({data}) => {
             if (data && data.code === 0) {
@@ -137,9 +145,15 @@
           if (valid) {
             if (this.dataForm.id) {
               this.$http({
+<<<<<<< HEAD
                 url: this.$http.adornUrl('/product/provider/repoUpdate'),
                 method: 'post',
                 data: this.$http.adornData({
+=======
+                url: 'http://jizhangyl.natapp1.cc/jizhangyl/product/provider/repoUpdate',
+                method: 'post',
+                data: qs.stringify({
+>>>>>>> 52aa519cf86f5f228359be46b880db9378353327
                   'id': this.dataForm.id,
                   'providerId': this.dataForm.providerId,
                   'productId': this.dataForm.productId,
@@ -163,9 +177,15 @@
               })
             } else {
               this.$http({
+<<<<<<< HEAD
                 url: this.$http.adornUrl('/product/provider/repoAdd'),
                 method: 'post',
                 data: this.$http.adornData({
+=======
+                url: 'http://jizhangyl.natapp1.cc/jizhangyl/product/provider/repoAdd',
+                method: 'post',
+                data: qs.stringify({
+>>>>>>> 52aa519cf86f5f228359be46b880db9378353327
                   'providerId': this.dataForm.providerId,
                   'productId': this.shop.id,
                   'purchasePrice': this.dataForm.purchasePrice,
@@ -194,6 +214,7 @@
         console.log(this.cate.id)
         if (id) {
           this.$http({
+<<<<<<< HEAD
             url: this.$http.adornUrl('/shop/findByCateId'),
             method: 'get',
             params: this.$http.adornParams({
@@ -201,6 +222,15 @@
               'page': 1,
               'size': 500
             })
+=======
+            url: 'http://jizhangyl.natapp1.cc/jizhangyl/shop/findByCateId',
+            method: 'get',
+            params: {
+              'id': id,
+              'page': 1,
+              'size': 500
+            }
+>>>>>>> 52aa519cf86f5f228359be46b880db9378353327
           }).then(({data}) => {
             if (data && data.code === 0) {
               this.shopList = data.data.shopList

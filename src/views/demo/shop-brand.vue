@@ -90,12 +90,21 @@
       getDataList () {
         this.dataListLoading = true
         this.$http({
+<<<<<<< HEAD
           url: this.$http.adornUrl('/brand/list'),
           method: 'get',
           params: this.$http.adornParams({
             'page': this.pageIndex,
             'size': this.pageSize || 10
           })
+=======
+          url: 'http://jizhangyl.natapp1.cc/jizhangyl/brand/list',
+          method: 'get',
+          params: {
+            'page': this.pageIndex,
+            'size': this.pageSize || 10
+          }
+>>>>>>> 52aa519cf86f5f228359be46b880db9378353327
         }).then(({data}) => {
           if (data && data.code === 0) {
             this.dataList = data.data.data
@@ -112,11 +121,19 @@
       searchBrandName () {
         this.dataListLoading = true
         this.$http({
+<<<<<<< HEAD
           url: this.$http.adornUrl('/brand/findByName'),
           method: 'get',
           params: this.$http.adornParams({
             'name': this.searchName
           })
+=======
+          url: 'http://jizhangyl.natapp1.cc/jizhangyl/brand/findByName',
+          method: 'get',
+          params: {
+            'name': this.searchName
+          }
+>>>>>>> 52aa519cf86f5f228359be46b880db9378353327
         }).then(({data}) => {
           if (data && data.code === 0) {
             this.dataList = data.data
@@ -163,7 +180,11 @@
           type: 'warning'
         }).then(() => {
           this.$http({
+<<<<<<< HEAD
             url: this.$http.adornUrl('/brand/delete'),
+=======
+            url: 'http://jizhangyl.natapp1.cc/jizhangyl/brand/delete',
+>>>>>>> 52aa519cf86f5f228359be46b880db9378353327
             method: 'get',
             params: this.$http.adornParams({
               'id': userIds[0]

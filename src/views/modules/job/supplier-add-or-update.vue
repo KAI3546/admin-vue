@@ -117,7 +117,11 @@
         this.$refs['dataForm'].validate((valid) => {
           if (valid) {
             this.$http({
+<<<<<<< HEAD
               url: 'https://www.jizhangyl.com/jizhangyl/product/provider/save',
+=======
+              url: 'http://jizhangyl.natapp1.cc/jizhangyl/product/provider/save',
+>>>>>>> 52aa519cf86f5f228359be46b880db9378353327
               method: 'POST',
               data: qs.stringify({
                 'providerId': this.dataForm.providerId || undefined,

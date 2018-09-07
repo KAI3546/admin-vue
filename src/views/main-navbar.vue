@@ -30,7 +30,10 @@
               <img src="~@/assets/img/avatar.png" :alt="userName">{{ userName }}
             </span>
             <el-dropdown-menu slot="dropdown">
+<<<<<<< HEAD
               <el-dropdown-item @click.native="logoutHandle()">退出</el-dropdown-item>
+=======
+>>>>>>> 52aa519cf86f5f228359be46b880db9378353327
             </el-dropdown-menu>
           </el-dropdown>
         </el-menu-item>
@@ -43,6 +46,10 @@
 
 <script>
   import UpdatePassword from './main-navbar-update-password'
+<<<<<<< HEAD
+=======
+  import { clearLoginInfo } from '@/utils'
+>>>>>>> 52aa519cf86f5f228359be46b880db9378353327
   export default {
     data () {
       return {
@@ -84,11 +91,22 @@
           type: 'warning'
         }).then(() => {
           this.$http({
+<<<<<<< HEAD
             url: this.$http.adornUrl('/user/logout'),
             method: 'get',
             params: this.$http.adornParams()
           }).then(({data}) => {
             // window.location.href='https://www.jizhangyl.com/jizhangyl/wechat/qrAuthorize?returnUrl=https://www.jizhangyl.com/jizhangyl/user/login'
+=======
+            url: this.$http.adornUrl('/sys/logout'),
+            method: 'post',
+            data: this.$http.adornData()
+          }).then(({data}) => {
+            if (data && data.code === 0) {
+              clearLoginInfo()
+              this.$router.push({ name: 'login' })
+            }
+>>>>>>> 52aa519cf86f5f228359be46b880db9378353327
           })
         }).catch(() => {})
       }

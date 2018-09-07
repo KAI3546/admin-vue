@@ -97,6 +97,7 @@ router.beforeEach((to, from, next) => {
           'url': 'sys/purchase',
           'perms': 'sys:purchase:list,sys:purchase:info,sys:purchase:save,sys:purchase:update,sys:purchase:delete',
           'type': 1,
+<<<<<<< HEAD
           'icon': 'log',
           'orderNum': 6,
           'open': null,
@@ -110,13 +111,19 @@ router.beforeEach((to, from, next) => {
           'url': 'sys/confirmID',
           'perms': 'sys:confirmID:list,sys:confirmID:info,sys:confirmID:save,sys:confirmID:update,sys:confirmID:delete',
           'type': 1,
+=======
+>>>>>>> 52aa519cf86f5f228359be46b880db9378353327
           'icon': 'admin',
           'orderNum': 6,
           'open': null,
           'list': null
         },
         {
+<<<<<<< HEAD
           'menuId': 30,
+=======
+          'menuId': 29,
+>>>>>>> 52aa519cf86f5f228359be46b880db9378353327
           'parentId': 1,
           'parentName': null,
           'name': '订单导出',
@@ -129,7 +136,11 @@ router.beforeEach((to, from, next) => {
           'list': null
         },
         {
+<<<<<<< HEAD
           'menuId': 31,
+=======
+          'menuId': 30,
+>>>>>>> 52aa519cf86f5f228359be46b880db9378353327
           'parentId': 1,
           'parentName': null,
           'name': '仓库商品管理',

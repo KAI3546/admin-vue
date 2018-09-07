@@ -80,7 +80,11 @@
       getDataList () {
         this.dataListLoading = true
         this.$http({
+<<<<<<< HEAD
           url: this.$http.adornUrl('/cate/list'),
+=======
+          url: 'http://jizhangyl.natapp1.cc/jizhangyl/cate/list',
+>>>>>>> 52aa519cf86f5f228359be46b880db9378353327
           method: 'get'
         }).then(({data}) => {
           if (data && data.code === 0) {
@@ -124,7 +128,11 @@
           type: 'warning'
         }).then(() => {
           this.$http({
+<<<<<<< HEAD
             url: this.$http.adornUrl('/cate/delete'),
+=======
+            url: 'http://jizhangyl.natapp1.cc/jizhangyl/cate/delete',
+>>>>>>> 52aa519cf86f5f228359be46b880db9378353327
             method: 'get',
             params: this.$http.adornParams({
               'cateIds': userIds.join('-')

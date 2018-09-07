@@ -16,7 +16,11 @@
 </template>
 
 <script>
+<<<<<<< HEAD
   // import qs from 'qs'
+=======
+  import qs from 'qs'
+>>>>>>> 52aa519cf86f5f228359be46b880db9378353327
   export default {
     data () {
       return {
@@ -46,12 +50,21 @@
       // 表单提交
       dataFormSubmit () {
         this.$refs['dataForm'].validate((valid) => {
+<<<<<<< HEAD
           let url = this.dataForm.id ? '/brand/update' : '/brand/save'
           if (valid) {
             this.$http({
               url: this.$http.adornUrl(url),
               method: 'POST',
               data: this.$http.adornData({
+=======
+          let url = this.dataForm.id ? 'http://jizhangyl.natapp1.cc/jizhangyl/brand/update' : 'http://jizhangyl.natapp1.cc/jizhangyl/brand/save'
+          if (valid) {
+            this.$http({
+              url: url,
+              method: 'POST',
+              data: qs.stringify({
+>>>>>>> 52aa519cf86f5f228359be46b880db9378353327
                 'id': this.dataForm.id,
                 'name': this.dataForm.name,
                 'level': 0

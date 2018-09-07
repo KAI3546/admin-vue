@@ -78,7 +78,11 @@
         width="150"
         label="操作">
         <template slot-scope="scope">
+<<<<<<< HEAD
           <el-button type="primary" :disabled="scope.row.orderStatus === 4 " round size="mini" @click="rukuHandle(scope.row)">入库</el-button>
+=======
+          <el-button type="primary" :disabled="scope.row.orderStatus != 4 " round size="mini" @click="rukuHandle(scope.row)">入库</el-button>
+>>>>>>> 52aa519cf86f5f228359be46b880db9378353327
           <el-button type="primary" :disabled="scope.row.orderStatus != 0 " round size="mini" @click="deleteHandle(scope.row.orderId)">取消</el-button>
         </template>
       </el-table-column>
@@ -135,7 +139,11 @@
       getDataList () {
         this.dataListLoading = true
         this.$http({
+<<<<<<< HEAD
           url: this.$http.adornUrl('/purchase/order/list'),
+=======
+          url: 'http://jizhangyl.natapp1.cc/jizhangyl/purchase/order/list',
+>>>>>>> 52aa519cf86f5f228359be46b880db9378353327
           method: 'get',
           params: this.$http.adornParams({
             'page': this.pageIndex,
@@ -189,11 +197,19 @@
           type: 'warning'
         }).then(() => {
           this.$http({
+<<<<<<< HEAD
             url: this.$http.adornUrl('/purchase/order/cancel'),
             method: 'get',
             params: this.$http.adornParams({
               'orderId': userIds[0]
             })
+=======
+            url: 'http://jizhangyl.natapp1.cc/jizhangyl/purchase/order/cancel',
+            method: 'get',
+            params: {
+              'orderId': userIds[0]
+            }
+>>>>>>> 52aa519cf86f5f228359be46b880db9378353327
           }).then(({data}) => {
             if (data && data.code === 0) {
               this.$message({
@@ -232,7 +248,11 @@
             this.pageIndex = 1
           }
           this.$http({
+<<<<<<< HEAD
             url: this.$http.adornUrl('/purchase/order/findByOrderIdOrProviderName'),
+=======
+            url: 'http://jizhangyl.natapp1.cc/jizhangyl/purchase/order/findByOrderIdOrProviderName',
+>>>>>>> 52aa519cf86f5f228359be46b880db9378353327
             method: 'get',
             params: this.$http.adornParams({
               'orderId': this.query.orderId,

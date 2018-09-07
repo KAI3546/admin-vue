@@ -150,7 +150,11 @@
 </template>
 
 <script>
+<<<<<<< HEAD
   // import qs from 'qs'
+=======
+  import qs from 'qs'
+>>>>>>> 52aa519cf86f5f228359be46b880db9378353327
   export default {
     data () {
       return {
@@ -195,7 +199,11 @@
         fileLenght: 0,
         cateList: [],
         brandList: [],
+<<<<<<< HEAD
         url: 'https://www.jizhangyl.com/jizhangyl/shop/save',
+=======
+        url: 'http://jizhangyl.natapp1.cc/jizhangyl/shop/save',
+>>>>>>> 52aa519cf86f5f228359be46b880db9378353327
         dataRule: {
           shopName: [
             { required: true, message: '商品名不能为空', trigger: 'blur' }
@@ -239,7 +247,11 @@
         this.getBrandList()
         if (this.productId) {
           this.$http({
+<<<<<<< HEAD
             url: 'https://www.jizhangyl.com/jizhangyl/shop/detail',
+=======
+            url: 'http://jizhangyl.natapp1.cc/jizhangyl/shop/detail',
+>>>>>>> 52aa519cf86f5f228359be46b880db9378353327
             method: 'get',
             params: {
               'id': this.productId
@@ -265,8 +277,12 @@
               this.dataForm.customsTariffLine = data.data.customs_tariff_line
               this.dataForm.packCode = data.data.pack_code
               this.dataForm.customsProductId = data.data.customs_product_id
+<<<<<<< HEAD
               this.dataForm.wenan = (data.data.wenan === undefined ? ''
                 : data.data.wenan)
+=======
+              this.dataForm.wenan = (data.data.wenan === undefined ? '': data.data.wenan)
+>>>>>>> 52aa519cf86f5f228359be46b880db9378353327
               this.shopWhg = data.data.shop_whg
               let shopwhg = this.shopWhg.split('x')
               if (shopwhg.length > 0) {
@@ -284,14 +300,22 @@
                   this.brand.id = this.brandList[i].id
                 }
               }
+<<<<<<< HEAD
               this.url = 'https://www.jizhangyl.com/jizhangyl/shop/update'
+=======
+              this.url = 'http://jizhangyl.natapp1.cc/jizhangyl/shop/update'
+>>>>>>> 52aa519cf86f5f228359be46b880db9378353327
             } else {
               this.dataForm = []
             }
             this.dataListLoading = false
           })
         } else {
+<<<<<<< HEAD
           this.url = 'https://www.jizhangyl.com/jizhangyl/shop/save'
+=======
+          this.url = 'http://jizhangyl.natapp1.cc/jizhangyl/shop/save'
+>>>>>>> 52aa519cf86f5f228359be46b880db9378353327
           this.dataForm = []
         }
       },
@@ -309,12 +333,20 @@
           this.$refs.upload.submit()
         } else {
           this.$http({
+<<<<<<< HEAD
             url: this.$http.adornUrl('/shop/update'),
+=======
+            url: 'http://jizhangyl.natapp1.cc/jizhangyl/shop/update',
+>>>>>>> 52aa519cf86f5f228359be46b880db9378353327
             method: 'POST',
             headers: {
               'Content-Type': 'multipart/form-data'
             },
+<<<<<<< HEAD
             data: this.$http.adornData({
+=======
+            data: qs.stringify({
+>>>>>>> 52aa519cf86f5f228359be46b880db9378353327
               'id': this.dataForm.id,
               'cateId': this.cate.id,
               'brandId': this.brand.id,
@@ -363,9 +395,15 @@
             let shopWhg = this.width + 'x' + this.height + 'x' + this.gao
             let shopVolume = this.width * this.height * this.gao
             this.$http({
+<<<<<<< HEAD
               url: this.$http.adornParams('/shop/save'),
               method: 'POST',
               data: this.$http.adornData({
+=======
+              url: 'http://jizhangyl.natapp1.cc/jizhangyl/shop/save',
+              method: 'POST',
+              data: qs.stringify({
+>>>>>>> 52aa519cf86f5f228359be46b880db9378353327
                 'cateId': this.cate.id,
                 'brandId': this.brand.id,
                 'shopName': this.dataForm.shopName,
@@ -408,8 +446,14 @@
         })
       },
       getCateList () {
+<<<<<<< HEAD
         this.$http({
           url: this.$http.adornUrl('/cate/list'),
+=======
+        console.log('getCatelist')
+        this.$http({
+          url: 'http://jizhangyl.natapp1.cc/jizhangyl/cate/list',
+>>>>>>> 52aa519cf86f5f228359be46b880db9378353327
           method: 'get'
         }).then(({data}) => {
           if (data && data.code === 0) {
@@ -421,12 +465,21 @@
       },
       getBrandList () {
         this.$http({
+<<<<<<< HEAD
           url: this.$http.adornUrl('/brand/list'),
           method: 'get',
           params: this.$http.adornParams({
             'page': 1,
             'size': 200
           })
+=======
+          url: 'http://jizhangyl.natapp1.cc/jizhangyl/brand/list',
+          method: 'get',
+          params: {
+            'page': 1,
+            'size': 200
+          }
+>>>>>>> 52aa519cf86f5f228359be46b880db9378353327
         }).then(({data}) => {
           if (data && data.code === 0) {
             this.brandList = data.data.data

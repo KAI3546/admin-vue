@@ -92,7 +92,11 @@
       getDataList () {
         this.dataListLoading = true
         this.$http({
+<<<<<<< HEAD
           url: this.$http.adornUrl('/product/provider/findProviderByProductId'),
+=======
+          url: 'http://jizhangyl.natapp1.cc/jizhangyl/product/provider/findProviderByProductId',
+>>>>>>> 52aa519cf86f5f228359be46b880db9378353327
           method: 'get',
           params: this.$http.adornParams({
             'productId': this.productId
@@ -117,6 +121,23 @@
       currentChangeHandle (val) {
         this.pageIndex = val
         this.getDataList()
+<<<<<<< HEAD
+=======
+      },
+      // 失败信息
+      showErrorInfo (id) {
+        this.$http({
+          url: this.$http.adornUrl(`/sys/scheduleLog/info/${id}`),
+          method: 'get',
+          params: this.$http.adornParams()
+        }).then(({data}) => {
+          if (data && data.code === 0) {
+            this.$alert(data.log.error)
+          } else {
+            this.$message.error(data.msg)
+          }
+        })
+>>>>>>> 52aa519cf86f5f228359be46b880db9378353327
       }
     }
   }

@@ -151,12 +151,21 @@
       getDataList () {
         this.dataListLoading = true
         this.$http({
+<<<<<<< HEAD
           url: this.$http.adornUrl('/product/provider/list'),
           method: 'GET',
           params: this.$http.adornParams({
             'page': this.pageIndex,
             'size': this.pageSize
           })
+=======
+          url: 'http://jizhangyl.natapp1.cc/jizhangyl/product/provider/list',
+          method: 'GET',
+          params: {
+            'page': this.pageIndex,
+            'size': this.pageSize
+          }
+>>>>>>> 52aa519cf86f5f228359be46b880db9378353327
         }).then(({data}) => {
           console.log(data)
           if (data && data.code === 0) {
@@ -206,7 +215,11 @@
         }).then(() => {
           console.log(ids)
           this.$http({
+<<<<<<< HEAD
             url: this.$http.adornUrl('/product/provider/delete'),
+=======
+            url: 'http://jizhangyl.natapp1.cc/jizhangyl/product/provider/delete',
+>>>>>>> 52aa519cf86f5f228359be46b880db9378353327
             method: 'GET',
             params: this.$http.adornParams({
               'providerId': ids[0]

@@ -36,8 +36,13 @@ import {
   Table,
   TableColumn,
   DatePicker,
+<<<<<<< HEAD
   TimeSelect,
   TimePicker,
+=======
+  // TimeSelect,
+  // TimePicker,
+>>>>>>> 52aa519cf86f5f228359be46b880db9378353327
   Popover,
   Tooltip,
   // Breadcrumb,
@@ -105,8 +110,13 @@ Vue.use(Button)
 Vue.use(Table)
 Vue.use(TableColumn)
 Vue.use(DatePicker)
+<<<<<<< HEAD
 Vue.use(TimeSelect)
 Vue.use(TimePicker)
+=======
+// Vue.use(TimeSelect)
+// Vue.use(TimePicker)
+>>>>>>> 52aa519cf86f5f228359be46b880db9378353327
 Vue.use(Popover)
 Vue.use(Tooltip)
 // Vue.use(Breadcrumb)
